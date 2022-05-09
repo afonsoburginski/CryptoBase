@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         currentIndex: paginaAtual,
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Cryptos'),
+          BottomNavigationBarItem(icon: Icon(Icons.currency_bitcoin_sharp), label: 'Cryptos'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritos'),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_wallet), label: 'Carteira'),

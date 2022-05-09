@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AuthCheck extends StatefulWidget {
-  AuthCheck({Key? key}) : super(key: key);
+  const AuthCheck({Key? key}) : super(key: key);
 
   @override
   _AuthCheckState createState() => _AuthCheckState();

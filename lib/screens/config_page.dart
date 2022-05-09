@@ -23,7 +23,7 @@ class _ConfigPageState extends State<ConfigPage> {
 
   @override
   Widget build(BuildContext context) {
-    final conta = context.watch<AccountRepository>();
+    final account = context.watch<AccountRepository>();
     final loc = context.read<AppSettings>().locale;
     NumberFormat real =
         NumberFormat.currency(locale: loc['locale'], name: loc['name']);
@@ -39,7 +39,7 @@ class _ConfigPageState extends State<ConfigPage> {
             ListTile(
               title: const Text('Saldo'),
               subtitle: Text(
-                real.format(conta.saldo),
+                real.format(account.saldo),
                 style: const TextStyle(
                   fontSize: 25,
                   color: Colors.indigo,
@@ -116,9 +116,9 @@ class _ConfigPageState extends State<ConfigPage> {
   updateSaldo() async {
     final form = GlobalKey<FormState>();
     final valor = TextEditingController();
-    final conta = context.read<AccountRepository>();
+    final account = context.read<AccountRepository>();
 
-    valor.text = conta.saldo.toString();
+    valor.text = account.saldo.toString();
 
     AlertDialog dialog = AlertDialog(
       title: const Text('Atualizar o Saldo'),
@@ -142,7 +142,7 @@ class _ConfigPageState extends State<ConfigPage> {
         TextButton(
           onPressed: () {
             if (form.currentState!.validate()) {
-              conta.setSaldo(double.parse(valor.text));
+              account.setSaldo(double.parse(valor.text));
               Navigator.pop(context);
             }
           },

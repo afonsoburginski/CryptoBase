@@ -6,22 +6,22 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class GraficoHistorico extends StatefulWidget {
+class GraficoHistoricoo extends StatefulWidget {
   Crypto crypto;
-  GraficoHistorico({Key? key, required this.crypto}) : super(key: key);
+  GraficoHistoricoo({Key? key, required this.crypto}) : super(key: key);
 
   @override
-  _GraficoHistoricoState createState() => _GraficoHistoricoState();
+  _GraficoHistoricooState createState() => _GraficoHistoricooState();
 }
 
 enum Periodo { hora, dia, semana, mes, ano, total }
 
-class _GraficoHistoricoState extends State<GraficoHistorico> {
+class _GraficoHistoricooState extends State<GraficoHistoricoo> {
   List<Color> cores = [
     const Color(0xFF3F51B5),
   ];
   Periodo periodo = Periodo.hora;
-  List<Map<String, dynamic>> historico = [];
+  List<Map<String, dynamic>> Historicoo = [];
   List dadosCompletos = [];
   List<FlSpot> dadosGrafico = [];
   double maxX = 0;
@@ -36,11 +36,11 @@ class _GraficoHistoricoState extends State<GraficoHistorico> {
     loaded.value = false;
     dadosGrafico = [];
 
-    if (historico.isEmpty) {
-      historico = await repositorio.getHistoricoCrypto(widget.crypto);
+    if (Historicoo.isEmpty) {
+      Historicoo = await repositorio.getHistoricooCrypto(widget.crypto);
     }
 
-    dadosCompletos = historico[periodo.index]['prices'];
+    dadosCompletos = Historicoo[periodo.index]['prices'];
     dadosCompletos = dadosCompletos.reversed.map((item) {
       double preco = double.parse(item[0]);
       int time = int.parse(item[1].toString() + '000');

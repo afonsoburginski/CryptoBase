@@ -21,10 +21,10 @@ class CryptoRepository extends ChangeNotifier {
   }
 
   _refreshPrecos() async {
-   intervalo = Timer.periodic(Duration(minutes: 5), (_) => checkPrecos());
+   intervalo = Timer.periodic(const Duration(minutes: 5), (_) => checkPrecos());
   }
 
-  getHistoricoCrypto(Crypto crypto) async {
+  getHistoricooCrypto(Crypto crypto) async {
     final response = await http.get(
       Uri.parse(
         'https://api.coinbase.com/v2/assets/prices/${crypto.baseId}?base=BRL',

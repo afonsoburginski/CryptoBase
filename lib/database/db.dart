@@ -25,13 +25,13 @@ class DB {
   }
 
   _onCreate(db, versao) async {
-    await db.execute(_account);
+    await db.execute(_Account);
     await db.execute(_Wallet);
-    await db.execute(_historic);
+    await db.execute(_Historico);
     await db.insert('account', {'saldo': 0});
   }
 
-  String get _account => '''
+  String get _Account => '''
     CREATE TABLE account (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       saldo REAL
@@ -46,8 +46,8 @@ class DB {
     );
   ''';
 
-  String get _historic => '''
-    CREATE TABLE historic (
+  String get _Historico => '''
+    CREATE TABLE Historico (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       data_operacao INT,
       tipo_operacao TEXT,

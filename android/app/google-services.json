@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "810731812897",
+    "project_id": "cryptobase-c99a1",
+    "storage_bucket": "cryptobase-c99a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810731812897:android:5234306eb80376c9eb4b60",
+        "android_client_info": {
+          "package_name": "com.example.cryptobase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810731812897-nk69jidf18jkc524kvfavnq1c667e2hm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMOxdjZh8GysCxFPtCyT9-ISheKkmmPj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810731812897-nk69jidf18jkc524kvfavnq1c667e2hm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

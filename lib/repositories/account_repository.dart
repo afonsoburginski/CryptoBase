@@ -1,5 +1,5 @@
 import 'package:cryptobase/database/db.dart';
-import 'package:cryptobase/models/historic.dart';
+import 'package:cryptobase/models/historico.dart';
 import 'package:cryptobase/models/crypto.dart';
 import 'package:cryptobase/models/position.dart';
 import 'package:cryptobase/repositories/crypto_repository.dart';

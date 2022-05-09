@@ -5,7 +5,7 @@ const notion = new Client({ auth: functions.config().notion.key });
 const databaseId = functions.config().notion.database.id;
 
 export const enviarEmailParaNotion = functions.auth.user().onCreate(
-    async user => {
+    async (user: { email: any; }) => {
         const userEmail: any = user.email;
 
         try {

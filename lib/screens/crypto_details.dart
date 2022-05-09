@@ -22,13 +22,13 @@ class _CryptoDetailsState extends State<CryptoDetails> {
   final _form = GlobalKey<FormState>();
   final _valor = TextEditingController();
   double quantidade = 0;
-  late AccountRepository conta;
+  late AccountRepository account;
   Widget grafico = Container();
   bool graficoLoaded = false;
 
   getGrafico() {
     if (!graficoLoaded) {
-      grafico = GraficoHistorico(crypto: widget.crypto);
+      grafico = GraficoHistoricoo(crypto: widget.crypto);
       graficoLoaded = true;
     }
     return grafico;
@@ -37,7 +37,7 @@ class _CryptoDetailsState extends State<CryptoDetails> {
   comprar() async {
     if (_form.currentState!.validate()) {
       // Salvar a compra
-      await conta.comprar(widget.crypto, double.parse(_valor.text));
+      await account.comprar(widget.crypto, double.parse(_valor.text));
 
       Navigator.pop(context);
 
@@ -57,7 +57,7 @@ class _CryptoDetailsState extends State<CryptoDetails> {
   @override
   Widget build(BuildContext context) {
     readNumberFormat();
-    conta = Provider.of<AccountRepository>(context, listen: false);
+    account = Provider.of<AccountRepository>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -140,7 +140,7 @@ class _CryptoDetailsState extends State<CryptoDetails> {
                     return 'Informe o valor da compra';
                   } else if (double.parse(value) < 50) {
                     return 'Compra mínima é R\$ 50,00';
-                  } else if (double.parse(value) > conta.saldo) {
+                  } else if (double.parse(value) > account.saldo) {
                     return 'Você não tem saldo suficiente';
                   }
                   return null;

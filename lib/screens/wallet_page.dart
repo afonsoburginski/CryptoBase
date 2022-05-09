@@ -40,9 +40,9 @@ class _WalletPageState extends State<WalletPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Padding(
-              padding: const EdgeInsets.only(top: 48, bottom: 8),
+              padding: EdgeInsets.only(top: 48, bottom: 8),
               child: Text(
-                'Valor da Wallet',
+                'Valor em Carteira',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -57,7 +57,7 @@ class _WalletPageState extends State<WalletPage> {
               ),
             ),
             loadGrafico(),
-            loadHistorico(),
+            loadHistoricoo(),
           ],
         ),
       ),
@@ -123,11 +123,11 @@ class _WalletPageState extends State<WalletPage> {
 
   loadGrafico() {
     return (account.saldo <= 0)
-        ? Container(
+        ? SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 200,
             child: const Center(
-              child: const CircularProgressIndicator(),
+              child: CircularProgressIndicator(),
             ),
           )
         : Stack(
@@ -170,12 +170,12 @@ class _WalletPageState extends State<WalletPage> {
           );
   }
 
-  loadHistorico() {
-    final historico = account.historico;
+  loadHistoricoo() {
+    final Historicoo = account.historico;
     final date = DateFormat('dd/MM/yyyy - hh:mm');
     List<Widget> widgets = [];
 
-    for (var operacao in historico) {
+    for (var operacao in Historicoo) {
       widgets.add(ListTile(
         title: Text(operacao.crypto.nome),
         subtitle: Text(date.format(operacao.dataOperacao)),
